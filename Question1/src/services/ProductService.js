@@ -23,7 +23,7 @@ const fetchProducts = async (categoryname, top = 10, minPrice = "1", maxPrice = 
     const url = `http://20.244.56.144/test/companies/${company}/categories/${categoryname}/products?top=${top}&minPrice=${minPrice}&maxPrice=${maxPrice}`;
     const response = await axios.get(url, {
       headers: {
-        'Authorization': `Bearer ${process.env.JWT}`
+        'Authorization': `Bearer ${process.env.Token}`
       }
     });
     response.data.slice(0, top).forEach((product) => {
